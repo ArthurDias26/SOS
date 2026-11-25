@@ -1,0 +1,155 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-3);
+}
+
+.botaoNova {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: var(--esp-2) var(--esp-4);
+  border-radius: var(--raio);
+  background: var(--cor-primaria);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.botaoNova:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.filtros {
+  display: grid;
+  grid-template-columns: 160px 1fr 220px auto;
+  align-items: start;
+  gap: var(--esp-3);
+}
+
+.botoesFiltro {
+  display: flex;
+  gap: var(--esp-2);
+  /* alinha com os campos (abaixo do rótulo) */
+  margin-top: 25px;
+}
+
+.total {
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-tam-pequeno);
+}
+
+.vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--esp-3);
+}
+
+.tabelaCaixa {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+  padding: var(--esp-3);
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+  vertical-align: middle;
+}
+
+.tabela th {
+  font-size: var(--fonte-tam-pequeno);
+  color: var(--cor-texto-suave);
+  background: var(--cor-fundo);
+}
+
+.linha {
+  cursor: pointer;
+}
+
+.linha:hover {
+  background: var(--cor-primaria-clara);
+}
+
+.cartoes {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: var(--esp-3);
+}
+
+.cartaoOs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  color: inherit;
+  text-decoration: none;
+}
+
+.cartaoOs:hover {
+  border-color: var(--cor-primaria);
+}
+
+.cartaoTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.cartaoCliente {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.cartaoRodape {
+  font-size: var(--fonte-tam-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+/* Tablet: filtros em duas colunas */
+@media (max-width: 1023px) {
+  .filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .botoesFiltro {
+    margin-top: 0;
+  }
+}
+
+/* Celular: filtros empilhados e cartões no lugar da tabela */
+@media (max-width: 767px) {
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .botoesFiltro > * {
+    flex: 1;
+  }
+
+  .tabelaCaixa {
+    display: none;
+  }
+
+  .cartoes {
+    display: flex;
+  }
+}

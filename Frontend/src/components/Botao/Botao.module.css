@@ -1,0 +1,58 @@
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  min-height: 40px;
+  padding: var(--esp-2) var(--esp-4);
+  border: 1px solid transparent;
+  border-radius: var(--raio);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  /* Textos longos quebram em vez de alargar a tela em celulares */
+  white-space: normal;
+  text-align: center;
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primario {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+.primario:hover:not(:disabled) {
+  background: var(--cor-primaria-escura);
+}
+
+.secundario {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  border-color: var(--cor-borda);
+}
+
+.secundario:hover:not(:disabled) {
+  background: var(--cor-fundo);
+}
+
+.perigo {
+  background: var(--cor-perigo);
+  color: #fff;
+}
+
+.perigo:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.link {
+  background: none;
+  color: var(--cor-primaria);
+  padding: 0;
+  min-height: auto;
+  text-decoration: underline;
+  font-weight: 500;
+}

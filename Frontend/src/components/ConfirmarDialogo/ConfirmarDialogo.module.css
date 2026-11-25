@@ -1,0 +1,18 @@
+.mensagem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  margin-bottom: var(--esp-4);
+  overflow-wrap: anywhere;
+}
+
+.erro {
+  margin-bottom: var(--esp-4);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--esp-2);
+}

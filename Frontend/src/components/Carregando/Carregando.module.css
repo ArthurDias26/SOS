@@ -1,0 +1,23 @@
+.carregando {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-4);
+  color: var(--cor-texto-suave);
+}
+
+.giro {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 3px solid var(--cor-borda);
+  border-top-color: var(--cor-primaria);
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

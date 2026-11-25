@@ -1,0 +1,95 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.voltar {
+  align-self: flex-start;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.tituloLinha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-3);
+}
+
+.datas {
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-tam-pequeno);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--esp-4);
+}
+
+.tituloSecao {
+  margin-bottom: var(--esp-3);
+  font-size: 1.1rem;
+}
+
+/* Lista "rótulo: valor" */
+.dados {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--esp-2) var(--esp-4);
+  margin: 0;
+}
+
+.dados dt {
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-tam-pequeno);
+}
+
+.dados dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.textoLongo {
+  white-space: pre-wrap;
+}
+
+.acoes {
+  border-color: var(--cor-primaria);
+  border-width: 2px;
+}
+
+.botoesAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--esp-3);
+}
+
+@media (max-width: 767px) {
+  .grade {
+    grid-template-columns: 1fr;
+  }
+
+  /* rótulo em cima do valor em telas estreitas */
+  .dados {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .dados dd {
+    margin-bottom: var(--esp-2);
+  }
+
+  .botoesAcoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

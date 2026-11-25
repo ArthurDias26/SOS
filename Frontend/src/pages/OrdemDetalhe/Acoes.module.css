@@ -1,0 +1,76 @@
+/* Estilos compartilhados pelos componentes de ação do detalhe da OS
+   (FormOrcamento, DecisaoOrcamento, FormAndamento, EncerrarOrdem, CancelarOrdem). */
+
+.grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-2);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.linhaDupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--esp-3);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--esp-2);
+}
+
+.caixaMarcar {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--esp-2);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.caixaMarcar input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.indisponivel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+}
+
+.explicacao {
+  font-size: var(--fonte-tam-pequeno);
+  color: var(--cor-texto-suave);
+  max-width: 260px;
+}
+
+.resumo {
+  margin: 0;
+  padding: var(--esp-3);
+  background: var(--cor-fundo);
+  border-radius: var(--raio);
+  white-space: pre-wrap;
+}
+
+@media (max-width: 767px) {
+  .grupo {
+    flex-direction: column;
+  }
+
+  .linhaDupla {
+    grid-template-columns: 1fr;
+  }
+
+  .explicacao {
+    max-width: none;
+  }
+}

@@ -1,0 +1,27 @@
+.caixa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  padding: var(--esp-3) var(--esp-4);
+  border-radius: var(--raio);
+  border-left: 4px solid;
+  overflow-wrap: anywhere;
+}
+
+.erro {
+  background: var(--cor-perigo-clara);
+  border-color: var(--cor-perigo);
+  color: #7f1d1d;
+}
+
+.sucesso {
+  background: var(--cor-sucesso-clara);
+  border-color: var(--cor-sucesso);
+  color: #14532d;
+}
+
+.aviso {
+  background: var(--cor-aviso-clara);
+  border-color: #d97706;
+  color: var(--cor-aviso);
+}

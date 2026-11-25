@@ -1,0 +1,148 @@
+/*
+ * Estilos globais do SoS: reset, variáveis (cores, espaçamentos, fontes) e utilitários.
+ * Os estilos de cada componente/página ficam no seu próprio arquivo .module.css.
+ *
+ * Breakpoint principal: 768px (abaixo disso = celular). CSS Modules não aceitam variáveis em
+ * @media, então o valor 768px é repetido nos módulos; se mudar, procure por "768px".
+ */
+
+:root {
+  /* Cores base */
+  --cor-primaria: #1d4ed8;
+  --cor-primaria-escura: #1e3a8a;
+  --cor-primaria-clara: #dbeafe;
+  --cor-perigo: #b91c1c;
+  --cor-perigo-clara: #fee2e2;
+  --cor-sucesso: #15803d;
+  --cor-sucesso-clara: #dcfce7;
+  --cor-aviso: #92400e;
+  --cor-aviso-clara: #fef3c7;
+
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #4b5563;
+  --cor-borda: #d1d5db;
+  --cor-fundo: #f3f4f6;
+  --cor-superficie: #ffffff;
+  --cor-foco: #2563eb;
+
+  /* Cores de status (fundo + texto). Usadas pelo StatusBadge via utils/status.js. */
+  --status-azul-fundo: #dbeafe;
+  --status-azul-texto: #1e40af;
+  --status-ambar-fundo: #fef3c7;
+  --status-ambar-texto: #92400e;
+  --status-indigo-fundo: #e0e7ff;
+  --status-indigo-texto: #3730a3;
+  --status-verde-fundo: #dcfce7;
+  --status-verde-texto: #166534;
+  --status-cinza-fundo: #e5e7eb;
+  --status-cinza-texto: #374151;
+  --status-vermelho-fundo: #fee2e2;
+  --status-vermelho-texto: #991b1b;
+
+  /* Espaçamentos */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-5: 24px;
+  --esp-6: 32px;
+
+  /* Fontes */
+  --fonte: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --fonte-tam-pequeno: 0.875rem;
+  --fonte-tam-normal: 1rem;
+  --fonte-tam-grande: 1.25rem;
+  --fonte-tam-titulo: 1.5rem;
+
+  --raio: 6px;
+  --sombra: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --largura-menu: 220px;
+}
+
+/* Reset simples */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte);
+  font-size: var(--fonte-tam-normal);
+  line-height: 1.5;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  /* Garante que nenhuma tela crie rolagem horizontal (RNF014). */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fonte-tam-titulo);
+}
+
+h2 {
+  font-size: var(--fonte-tam-grande);
+}
+
+a {
+  color: var(--cor-primaria);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+/* Texto só para leitores de tela */
+.somente-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Cartão branco usado como "seção" em várias páginas */
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--esp-4);
+  box-shadow: var(--sombra);
+}
+
+.legenda-obrigatorio {
+  font-size: var(--fonte-tam-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+/* Quebra palavras longas (descrições, e-mails) em vez de alargar a tela */
+.quebrar-texto {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,54 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+  max-width: 720px;
+}
+
+.voltar {
+  align-self: flex-start;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.linhaDupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--esp-4);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--esp-3);
+}
+
+.cancelar {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: var(--esp-2) var(--esp-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .linhaDupla {
+    grid-template-columns: 1fr;
+  }
+
+  .botoes > * {
+    flex: 1;
+    justify-content: center;
+  }
+}

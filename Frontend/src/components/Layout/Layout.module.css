@@ -1,0 +1,154 @@
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  padding: var(--esp-2) var(--esp-4);
+  background: var(--cor-primaria-escura);
+  color: #fff;
+}
+
+.marca {
+  font-size: var(--fonte-tam-grande);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.usuario {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.nome {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.cargos {
+  font-size: var(--fonte-tam-pequeno);
+  opacity: 0.85;
+}
+
+.sair,
+.botaoMenu {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--raio);
+  padding: var(--esp-1) var(--esp-3);
+  min-height: 36px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sair:hover,
+.botaoMenu:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.botaoMenu {
+  display: none;
+}
+
+.corpo {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.menu {
+  width: var(--largura-menu);
+  flex-shrink: 0;
+  background: var(--cor-superficie);
+  border-right: 1px solid var(--cor-borda);
+  padding: var(--esp-4) 0;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  padding: var(--esp-3) var(--esp-4);
+  color: var(--cor-texto);
+  text-decoration: none;
+  border-left: 4px solid transparent;
+}
+
+.link:hover {
+  background: var(--cor-fundo);
+}
+
+.ativo {
+  border-left-color: var(--cor-primaria);
+  background: var(--cor-primaria-clara);
+  font-weight: 600;
+}
+
+.conteudo {
+  flex: 1;
+  min-width: 0;
+  padding: var(--esp-5);
+  max-width: 1200px;
+}
+
+/* Celular: menu recolhido atrás do botão */
+@media (max-width: 767px) {
+  .cabecalho {
+    padding: var(--esp-2) var(--esp-3);
+    gap: var(--esp-2);
+  }
+
+  .botaoMenu {
+    display: inline-block;
+  }
+
+  .corpo {
+    flex-direction: column;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--cor-borda);
+    padding: var(--esp-2) 0;
+  }
+
+  .menuAberto {
+    display: block;
+  }
+
+  .conteudo {
+    padding: var(--esp-4);
+  }
+}
+
+/* Telas bem estreitas: botão do menu só com o ícone e textos menores, para caber
+   nome e papéis do usuário (TELAS.md 4.2) */
+@media (max-width: 420px) {
+  .textoMenu {
+    display: none;
+  }
+
+  .nome {
+    font-size: var(--fonte-tam-pequeno);
+  }
+
+  .cargos {
+    font-size: 0.75rem;
+  }
+}
